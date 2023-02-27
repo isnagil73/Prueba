@@ -8,7 +8,7 @@ public class AppTest {
 	@Test
     public void shouldAnswerWithTrue() throws InterruptedException
     {
-        System.setProperty("webdriver.chrome.driver","chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:\\Users\\Israel\\eclipse-workspace\\Prueba\\chromedriver.exe");
         WebDriver driver=new ChromeDriver();
         driver.get("https://www.google.es/");
         driver.manage().window().maximize();
