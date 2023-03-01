@@ -16,6 +16,7 @@ public class AppTest {
 	@Test
     public void prueba() throws InterruptedException
     {
+		System.out.println("Inicio de la prueba");
 		WebDriverManager.chromedriver().setup();
 		System.setProperty("webdriver.chrome.driver","/home/israel/Descargas/chromedriver");
         //System.setProperty("webdriver.chrome.driver","C:\\Users\\Israel\\eclipse-workspace\\Prueba\\chromedriver.exe");
@@ -29,10 +30,9 @@ public class AppTest {
         //WebElement element=new WebElement();
         String title = driver.getTitle();
         //WebElement element = driver.findElement(By.cssSelector("p"));
-        System.out.print("El titulo de la pagina es: " + title);
-        System.out.print("");
+        System.out.println("El titulo de la pagina es: " + title);
         driver.close();     
-                             
+        System.out.println("Fin de la prueba");                     
         //System.out.print(driver.page_source.encode("utf-8"));
         ///opciones.setBinary("/opt/google/chrome/chrome");
 		//opciones.setBinary("C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe");
