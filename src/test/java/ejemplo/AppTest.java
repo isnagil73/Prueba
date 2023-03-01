@@ -9,9 +9,9 @@ public class AppTest {
 	@Test
     public void shouldAnswerWithTrue() throws InterruptedException
     {
-        System.setProperty("webdriver.chrome.driver","/home/israel/Descargas/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","/home/israel/Descargas/chromedriver");
         ChromeOptions opciones = new ChromeOptions();
-        opciones.setBinary("/opt/google/chrome/chrome.exe");
+        opciones.setBinary("/opt/google/chrome/chrome");
         WebDriver driver=new ChromeDriver(opciones);
         driver.get("https://www.google.es/");
         driver.manage().window().maximize();
