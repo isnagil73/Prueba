@@ -11,10 +11,16 @@ public class AppTest {
     {
         System.setProperty("webdriver.chrome.driver","/home/israel/Descargas/chromedriver");
         ChromeOptions opciones = new ChromeOptions();
+        
         opciones.setBinary("/opt/google/chrome/chrome");
+        opciones.addArguments("start-maximized");
+        opciones.addArguments("disable-infobars");
+        opciones.addArguments("--disable-extensions");
+        opciones.addArguments("--disable-dev-shm-usage");
+        opciones.addArguments("--no-sandbox");
+        
         WebDriver driver=new ChromeDriver(opciones);
         driver.get("https://www.google.es/");
-        driver.manage().window().maximize();
         driver.close();
     }
 }
