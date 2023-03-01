@@ -17,8 +17,8 @@ public class AppTest {
     public void prueba() throws InterruptedException
     {
 		WebDriverManager.chromedriver().setup();
-		///System.setProperty("webdriver.chrome.driver","/home/israel/Descargas/chromedriver");
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\Israel\\eclipse-workspace\\Prueba\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","/home/israel/Descargas/chromedriver");
+        //System.setProperty("webdriver.chrome.driver","C:\\Users\\Israel\\eclipse-workspace\\Prueba\\chromedriver.exe");
         ChromeOptions opciones = new ChromeOptions();
         opciones.addArguments("--no-sandbox");
         opciones.addArguments("--disable-dev-shm-usage");
