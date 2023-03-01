@@ -31,7 +31,8 @@ public class AppTest {
 		//driver.get("https://www.google.es/");
 		//driver.close();
 				
-		System.setProperty("webdriver.chrome.driver","C:\\Users\\Israel\\eclipse-workspace\\Prueba\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver","C:\\Users\\Israel\\eclipse-workspace\\Prueba\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","/home/israel/Descargas/chromedriver");
 		DesiredCapabilities capabilities = new DesiredCapabilities();
         Proxy proxy = new Proxy();
         String proxyServer = String.format("AProxyIDontWantToDisplay", System.getenv("proxy.username"), 
