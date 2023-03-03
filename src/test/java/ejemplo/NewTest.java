@@ -35,9 +35,9 @@ public class NewTest {
       element2.sendKeys("deltri");
       System.out.println("Contraseña introducida");
       driver.findElement(By.id("boton")).click();
-      //System.out.println("El titulo de la pagina es: " + title);
       String url2 = "http://fernando9torres-dev.hps.es:8081/admin";
       Assert.assertEquals(url2, driver.getCurrentUrl());
+      System.out.println("El titulo de la pagina es: " + driver.getCurrentUrl());
       driver.close();     
       System.out.println("Fin de la prueba");                     
       //System.out.print(driver.page_source.encode("utf-8"));
