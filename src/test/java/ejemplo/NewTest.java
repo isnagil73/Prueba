@@ -15,15 +15,17 @@ public class NewTest {
   @Test
   public void prueba() throws InterruptedException {
 	  System.out.println("Inicio de la prueba");
-		WebDriverManager.chromedriver().setup();
+	  WebDriverManager.chromedriver().setup();
 		//System.setProperty("webdriver.chrome.driver","/home/israel/Descargas/chromedriver");
-      System.setProperty("webdriver.chrome.driver","C:\\Users\\Israel\\eclipse-workspace\\Prueba\\chromedriver.exe");
+      //System.setProperty("webdriver.chrome.driver","C:\\Users\\Israel\\eclipse-workspace\\Prueba\\chromedriver.exe");
       ChromeOptions opciones = new ChromeOptions();
       opciones.addArguments("--no-sandbox");
       opciones.addArguments("--disable-dev-shm-usage");
-      //opciones.addArguments("--headless");
+      opciones.addArguments("--remote-allow-origins=*");
+      opciones.addArguments("--headless");
       WebDriver driver = new ChromeDriver(opciones);
       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+      //String url = "http://www.google.es";
       String url = "http://fernando9torres-dev.hps.es:8081/login";
       //driver.get("http://fernando9torres-dev.hps.es:8081/actualidad");
       driver.get(url);
@@ -40,6 +42,7 @@ public class NewTest {
       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
       Thread.sleep(5000);
       String url2 = "http://fernando9torres-dev.hps.es:8081/admin";
+      //String url2 = "http://www.google.es";
       Assert.assertEquals(url2, driver.getCurrentUrl());
       System.out.println("El titulo de la pagina es: " + driver.getCurrentUrl());
       driver.close();     
