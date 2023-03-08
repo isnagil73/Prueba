@@ -9,10 +9,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import java.time.Duration;
 
 public class NewTest {
   @Test
-  public void prueba() {
+  public void prueba() throws InterruptedException {
 	  System.out.println("Inicio de la prueba");
 		WebDriverManager.chromedriver().setup();
 		//System.setProperty("webdriver.chrome.driver","/home/israel/Descargas/chromedriver");
@@ -20,8 +21,9 @@ public class NewTest {
       ChromeOptions opciones = new ChromeOptions();
       opciones.addArguments("--no-sandbox");
       opciones.addArguments("--disable-dev-shm-usage");
-      opciones.addArguments("--headless");
+      //opciones.addArguments("--headless");
       WebDriver driver = new ChromeDriver(opciones);
+      driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
       String url = "http://fernando9torres-dev.hps.es:8081/login";
       //driver.get("http://fernando9torres-dev.hps.es:8081/actualidad");
       driver.get(url);
@@ -35,6 +37,8 @@ public class NewTest {
       element2.sendKeys("deltri");
       System.out.println("Contraseña introducida");
       driver.findElement(By.id("boton")).click();
+      driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+      Thread.sleep(5000);
       String url2 = "http://fernando9torres-dev.hps.es:8081/admin";
       Assert.assertEquals(url2, driver.getCurrentUrl());
       System.out.println("El titulo de la pagina es: " + driver.getCurrentUrl());
